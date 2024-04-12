@@ -39,7 +39,6 @@ ball = Object('3.png', 435, 255, (40, 40))
 ball_speed_x = 4
 ball_speed_y = 4
 
-background = pygame.transform.scale(pygame.image.load("4.jpg"), (WIDTH, HEIGHT))
 win = pygame.transform.scale(pygame.image.load("win.png"), (200, 100))
 lose = pygame.transform.scale(pygame.image.load("lose.png"), (200, 100))
 restart = pygame.transform.scale(pygame.image.load("restart.jpg"), (200, 100))

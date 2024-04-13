@@ -15,11 +15,11 @@ class Object:
 
     points = 0
 
-    def __init__(self, object_image, object_x, object_y, object_size):
-        self.image = pygame.transform.scale(pygame.image.load(object_image).convert_alpha(), object_size)
+    def __init__(self, GameSprite_image, GameSprite_x, GameSprite_y, GameSprite_size):
+        self.image = pygame.transform.scale(pygame.image.load(GameSprite_image).convert_alpha(), GameSprite_size)
         self.rect = self.image.get_rect()
-        self.rect.x = object_x
-        self.rect.y = object_y
+        self.rect.x = GameSprite_x
+        self.rect.y = GameSpritet_y
 
     def draw(self):
         mw.blit(self.image, (self.rect.x, self.rect.y))
@@ -32,10 +32,10 @@ def render_score(racket):
     else:
         result = str(racket.points)
 
-racket_one = Object('1.png', 20, 185, (20, 150))
-racket_two = Object('2.png', 860, 185, (20, 150))
+racket_one = GameSprite('1.png', 20, 185, (20, 150))
+racket_two = GameSprite('2.png', 860, 185, (20, 150))
 
-ball = Object('3.png', 435, 255, (40, 40))
+ball = GameSprite('3.png', 435, 255, (40, 40))
 ball_speed_x = 4
 ball_speed_y = 4
 
@@ -50,15 +50,11 @@ game = True
 finish = False
 
 while game:
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             game = False
-
     if not finish:
-
-        mw.fill((200, 200, 200))
-        
+        mw.fill((200, 200, 200))       
 
         ball.draw()
         racket_one.draw()
